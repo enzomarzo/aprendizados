@@ -1,0 +1,63 @@
+<!-- <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">   -->
+
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Aprendizados 2.0</h1>
+  </mat-toolbar>
+
+  <mat-drawer-container class="example-sidenav-container">
+    <mat-drawer #snav class="example-sidenav" mode="side" opened="true">
+      <!--Inicio do MENU -->
+
+      <!--Front-->
+      <ul class="snav-menu p-0">
+        <li class="snav-titulo">
+          <button type="button" class="snav-collapse">
+            <span class="align-middle">Front-end</span>
+            <mat-icon aria-hidden="false" class="seta">keyboard_arrow_right</mat-icon>
+          </button>
+        </li>
+        <div class="content">
+          <a routerLink='/javascript' class="snav-item">Javascript</a>
+          <a routerLink='/' class="snav-item">Typescript (teste)</a>
+        </div>
+      </ul>
+
+      <!--Back-->
+      <ul class="snav-menu p-0">
+        <li class="snav-titulo">
+          <button type="button" class="snav-collapse">
+            <span class="align-middle">Back-end</span>
+            <mat-icon aria-hidden="false" class="seta">keyboard_arrow_right</mat-icon>
+          </button>
+        </li>
+        <div class="content">
+          <a routerLink='/php' class="snav-item">PHP</a>
+          <a routerLink='/node' class="snav-item">Node</a>
+        </div>
+      </ul>
+
+      <!--Outros-->
+      <ul class="snav-menu p-0">
+        <li class="snav-titulo">
+          <button type="button" class="snav-collapse">
+            <span class="align-middle">Outros</span>
+            <mat-icon aria-hidden="false" class="seta">keyboard_arrow_right</mat-icon>
+          </button>
+        </li>
+        <div class="content">
+            <a routerLink='/wordpress' class="snav-item">Wordpress</a>
+        </div>
+      </ul>
+
+      <!--Fim do MENU-->
+    </mat-drawer>
+
+    <mat-drawer-content class="container mt-3">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

@@ -1,0 +1,33 @@
+<p>Eu comecei a programar depois de 'velho', com 34 anos. E comecei no meio termo entre o que seria considerado hardcore, como Assembly por exemplo, e o que seria o mais alto nivel possível, algo como um Wix ou um low/no-code qualquer. Diria que puxei um pouco mais pro alto nivel pois tentei começar a entender primeiro um Framework (Angular) ao invés da linguagem (JS). Mas também fui estudar um pouco de Java e foi com ele que entendi orientação a objeto na prática</p>
+
+<p>Por ter começado a desenvolver em Angular, tentando ir mais a fundo em JS e passando um pouco por Java eu tinha bastante preconceito com Wix, Wordpress e similares. Mas eis que eu estava, junto com amigos, começando a criar um e-commerce e, ainda mais no inicio, entendia que era impossivel (com a verba, o tempo e os recursos que tinha) fazer programando tudo. Ia totalmente contra a ideia de MVP. E entre as modalidades de e-commerce que eu analisei, decidi fazer com o Wordpress, que é um projeto open source, com uma comunidade gigante, de fácil criação e que permite mexer no código (PHP ou javascript) se for precisso </p>
+
+<p>E o processo foi bizarro de fácil. Em um dia consegui subir um projeto piloto (ainda bem rascunhado). E em uma semana consegui subir produtos, fotos, banners, meio de pagamento, calculo de frete e colocar o site no ar.</p>
+
+<p>E portanto resolvi entender um pouco melhor como funciona o Wordpress. E também o PHP</p>
+
+<h2>Plugins</h2>
+
+<p>A facilidade do wordpress funciona por meio dos plugins. Preciso criar um formulário responsivo com animações e validações? Existe vários plugins que fazem isso! Quero calcular frete, colocar meio de pagamento, integrar o facebook, cadastrar o analytics, fazer o SEO, efetuar o cash ? Para tudo isso existem vários plugins. Uma pessoa ou uma empresa cria o código necessário e coloca isso em um plugin. E fica responsável por atualizar esse código/plugin assim que o Wordpress ou o PHP atualizam a sua versão.</p>
+
+<h2>Orientação a eventos</h2>
+
+<p>O WP é orientado a eventos. E tem uma curiosidade que li por ai que o principio desse paradigma tem a ver com a principio de Hollywood de: 'não nos telefone, nós telefonaremos para você'. Isso quer dizer que, nesse paradigma, não devemos chamar nada, devemos apenas nos inscrever para ser chamado</p>
+
+<p>A principio, quando estava tentando entender Orientação a Eventos eu quis comparar a Orientação a Objetos, que já tinha aprendido. Mas não há concorrência. É possível programar em orientação a objetos e depois fazer esses objetos responderem a eventos. Portanto elas podem trabalhar juntas.</p>
+
+<p>O fluxo de execução do nosso código é determinado por eventos que forem disparados. Algo acontece ou um estado muda e um comportamento é chamado a executar. Isso quer dizer que a execução dos algoritmos é condicionada a algo anterior</p>
+
+<p>Hooks - Actions e Filters</p>
+
+<p>uma forma na minha cabeça de entender Actions e filters é que actions seria como o verbo GET e os Filters como o POST. </p>
+
+<p><b>Actions:</b> Um exemplo seria o admin-header.php. quando eu abro o admin do WP aparecem algumas notificações de alguns plugins (por exemplo: ´compre nosso plugin premium...´). No admin-header tem um código escrito 'do_action( 'all_admin_notices')'. Isso quer dizer que ´pessoal, quando abrir a tela do wp-admin, executarei o todos notices, me enviem o que você querem.´ E um outro plugin vai ter escrito algo como add_action ('all_admin_notices', 'function_que_faz_algo') </p>
+
+<p><b>Filters:</b>Já os filtros eles permitem mudar algo. Os filtros, diferentes das actions, precisam ter um ´return´. Então por exemplo, ao clicar em algo no WP ele encaminha para www.worpdres.org mas ele permite, através de uma funcão de filtro que alguém altere isso. E ai criamos uma função que tenha como retorno ´minha_pagina.com´ e pronto, realizamos a alteração.</p>
+
+<p>Na prática, as duas são parecidas (o wp inclusive utiliza a filter para fazer a action). A diferença maior é que a Filter tem um retorno e a Action não. E geralmente usamos as actions para buscar algo e a filter para modificar algo.</p>
+
+<p>Podemos passar 4 parametros nas actions/filters. Abaixo o exemplo</p>
+
+<pre><code [highlight]='codeHook1'></code></pre>
