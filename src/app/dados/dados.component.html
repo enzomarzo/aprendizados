@@ -1,0 +1,47 @@
+<h1>Ciência de Dados</h1>
+
+<p>Estou fazendo algo bem introdutório em dados, a semana de imersão em dados da Alura</p>
+
+<p><b>Google Colaboratory:</b> é um programa gratuito, que roda python e dá pra fazer alguns testes em dados.</p>
+
+<pre><code [highlight]='codeColab1'></code></pre>
+
+<p>Pronto. Mais fácil que tabuada de um! Temos um listão, muito semelhante ao excel, com 23 mil linhas e várias colunas.</p>
+
+<h2>Primeiros Passos </h2>
+
+<p>Bom, como eu já tenho minha variável criada, posso verificar apenas as 5 primeiras linhas digitando <code>dados.head()</code> ou descobrir quantas linhas e colunas existem digitando <code>dadod.shape</code></p>
+
+<p>A terceira coluna recebe o nome de ´tratamento´. E eu quero saber quais são os campos diferentes (ou unicos) que aparecem nessa coluna. Para isso é só digitar <code>dados['tratamento'].unique()</code>. Se eu quiser fazer a contagem de elementos é só digitar <code>.value_counts()</code></p>
+
+<p>Essas funções do pandas podem receber parametros. Então se eu fizer <code>dados['tratamento'].value_counts<b>(normalize = True)</b></code> eu vou receber a relação proporcional dessa contagem de dados. </p>
+
+<p>Na hora de analisar dados é interessante que exista algum tipo de criptografia dos dados, seja para não sermos tendenciosos na analise seja para proteger a informação do usuário.</p>
+
+<p>Renomeando colunas</p>
+
+<pre><code [highlight]='codeColab2'></code></pre>
+
+<p><b>Gráficos</b>: Se quisermos na tela um gráfico pizza (ou torta) é só digitarmos a função plot.pie(). Como por exemplo <code>dados['tratamento'].value_counts().plot.pie()</code>. Ou um gráfico de barras com <code>.plot.bar</code>. O pandas utiliza uma biblioteca chamada <b>matplotlib</b> para fazer esses gráficos.</p>
+
+<p><code>dados['composto'].value_counts()[0:5]</code>. É simples, mas temos que olhar os códigos por partes. É como ler uma frase, lendo palavra por palavra. Então temos a tabela dados e estamos pegando apenas a coluna de composto. Depois estamos contando quanto existe de cada composto. E por fim estamos pegando apenas os itens 0, 1, 2, 3 e 4. Ou seja, os 5 primeiros itens do array. Já que o value_counts lista primeiro o componente com mais frequencia, então teremos o top 5 mais frequentes.</p>
+
+<p>criando <b>query</b> e <b>filtrando</b> uma tabela</p>
+
+<pre><code [highlight]='codeColab3'></code></pre>
+
+<p>Avançando um pouco mais nos gráficos, podemos utilizar uma biblioteca chamada seaborn. E nela passamos a query que acabamos de criar acima</p>
+
+<p>Um gráfico um pouco melhor</p>
+<pre><code [highlight]='codeColab4'></code></pre>
+
+<p>Aprimorando ainda mais o gráfico acima</p>
+<pre><code [highlight]='codeColab5'></code></pre>
+
+<p><code>len(dados['g-0'].unique())</code> . O len permite nos mostrar quantos itens existem dentro do array (ou da lista, da consulta). Nesse caso estamos vendo quantos itens únicos tem na coluna g-0.</p>
+
+<p><code>.descibre()</code>O pandas já fornece um relatório com o método .describe. Ele vai colocar informações como média, máx, minimo..</p>
+
+<p>Filtrando por coluna e tabela, aumentando cada elemento do gráfico e criando a primeiro resultado com alguns padrões estipulados pelo pandas </p>
+
+<pre><code [highlight]='codeColab6'></code></pre>

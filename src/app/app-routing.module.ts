@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DadosComponent } from './dados/dados.component';
 import { HomeComponent } from './home/home.component';
 import { JavascriptComponent } from './javascript/javascript.component';
 import { OrientacaoObjetoComponent } from './javascript/orientacao-objeto/orientacao-objeto.component';
@@ -14,7 +15,9 @@ const routes: Routes = [
   { path: 'javascript', component: JavascriptComponent },
   { path: 'javascript/oo', component: OrientacaoObjetoComponent },
   { path: 'php', component: PhpComponent},
-  { path: 'wordpress', component: WordpressComponent}
+  { path: 'wordpress', component: WordpressComponent},
+  { path: 'ciencia-de-dados', component: DadosComponent}
+
 ];
 
 @NgModule({

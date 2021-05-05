@@ -16,9 +16,10 @@ import { JavascriptComponent } from './javascript/javascript.component';
 import { OrientacaoObjetoComponent } from './javascript/orientacao-objeto/orientacao-objeto.component';
 import { WordpressComponent } from './wordpress/wordpress.component';
 import { PhpComponent } from './php/php.component';
+import { DadosComponent } from './dados/dados.component';
 
 @NgModule({
-  declarations: [AppComponent, SidenavComponent, HomeComponent, JavascriptComponent, OrientacaoObjetoComponent, WordpressComponent, PhpComponent],
+  declarations: [AppComponent, SidenavComponent, HomeComponent, JavascriptComponent, OrientacaoObjetoComponent, WordpressComponent, PhpComponent, DadosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
