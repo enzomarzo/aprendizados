@@ -60,7 +60,15 @@ dados.loc[:, 'g-0':'g-771'].describe().T['mean'].hist(bins=30)
 #hist vai criar um gráfico. E bins é para fazer esse gráfico espaçar menos as informações
 `
 
-codeColab7=``
+codeColab7=`pd.crosstab(dados['dose'], dados['tempo'])
+
+#Resultado:
+#tempo	24	48	72
+#dose			
+#D1	3886	4354	3907
+#D2	3886	3896	3885`
+
+
 
   constructor() { }
 

@@ -3,3 +3,115 @@
 <h2>Porque surgiu o PHP</h2>
 
 <p>A internet surge em 1970. E a web em 1990. Em 1995 um cara (Rasmus Lerdorf) se perguntou: como eu faço para saber quantas pessoas estão visitando meu site? E ele criou um código em C (que era a linguagem que ele manjava) para fazer isso. E deu o nome disso de ´Personal Home Page Tools´. E é dai que vem o PHP, das iniciais de Personal Home Page. Na segunda versão ele criou funcionalidade novas (em Perl) que interpretava formulários (naquela epoca muito dificil). Na versão 2 o PHP era apenas uma biblioteca e ainda não era uma linguagem. Logo depois ele resolve tornar o PHP open source e em 1997, o PHP começa a ser utilizado por muita gente e muito programador ajuda a criar novas funcionalidades. E em 1998 dois programadores israelenses resolvem remodelar todo o PHP e ai ele vira de fato uma linguagem. E renomearam a linguagem para PHP Hypertext Preprocessor. Meio estranho porque o primeiro P do PHP significa PHP !!! Mas isso porque o nome PHP já estava em alta e não valia a pena mudar. E em 1999, na sua terceira versão, já se estimava que o PHP representava 10% de toda internet </p>
+
+<h2>Olá Mundo em PHP</h2>
+
+<p><code>Echo "Olá mundo!";</code>. É tão simples quanto isso para escrever nosso olá mundo.</p>
+
+<p>Para iniciar um arquivo php colocamos o <code>&lt;? php</code>. Após isso um espaço (geralmente efetua-se a quebra de linha) é obrigatório e informa ao interpretador que esse código deve ser lido e interpretado.</p>
+
+<p>As variáveis em php começam com $.</p>
+
+<p><b>Operações matemáticas</b> segue o padrão normal das linguagens.</p>
+
+<p><b>Tipos</b> também seguem o padrão normal (string, float/double, integer, boolean). No PHP não há necessidade de tipar as variáveis (tipagem fraca) e conseguimos descobrir o tipo com o código <code>echo gettype($variavel)</code></p>
+
+<p><b>String:</b> o php entende aspas simples e dupla para string. Mas as aspas duplas é mais utilizada pois ao utilizar aspas duplas o php permite que coloquemos as variáveis dentro da string (o que tiver $ será lido como variável) e também os caracteres especiais com a contra barra \ . Essas 'sequencias de escapes' podemos encontrar <a href="https://www.php.net/manual/pt_BR/language.types.string.php#language.types.string.syntax.double">na documentação do php</a></p>
+
+<p><b>Operadores</b> lógicos (&&, ||) e de comparação (&lt; , >, == , !=) também seguem o padrão</p>
+
+<p>Abaixo um exemplo de código simples de php com valor ternário</p>
+
+<pre><code [highlight]='codePhp1'></code></pre>
+
+<p><b>Composer</b>: É uma ferramneta para gerenciamento de dependências do PHP. É como o NPM do Node/JS ou o Maven no Java. Inclusive o Composer teve uma inspiração no NPM. O que ele faz é facilitar a instalação de biliotecas ou pacote de terceiros no nosso projeto.</p>
+
+<p>O composer instala os pacotes em uma pasta chamada <b>Vendor</b>. </p>
+
+<p><b>Array:</b> As 'listas' no php tb são como o padrão de outras linguagens - <code>$idadeList = [21, 25, 30, 35]</code> que é a mesma coisa que fazer <code>$idade1=21 ; $idade1=25 ; $idade1=30 ; $idade1=35 ;</code>. E o for com array que sempre é muito comum => <code>for($i = 0 ; $i &lt; count($idadeList); $i++ &#123;echo $idadeList[$i]&#125;	</code></p>
+
+<p>Listas e iterações são muito utilizadas. As listas, que são conhecidas como arrays, servem para agruparmos em uma mesma variável uma serie de elementos. </p>
+
+<h2>Adicionando itens no array</h2>
+
+<p>Uma forma de adicionar itens no array:</p>
+
+<p>O PHP trabalha com arrays dinamicos, então para adicionar um novo item ao array não é necessário criar uma nova lista ou manipular a memória.</p>
+
+<pre><code [highlight]='codePhp2'></code></pre>
+
+<h2>Arrays Associativos</h2>
+
+<p>Me pareceu um tanto estranho quando eu vi esse ´array associativo´. Me parece algo como um objeto</p>
+
+<pre><code [highlight]='codePhp3'></code></pre>
+
+<p>Como o array no PHP é dinâmico e aceita string e numeros como seus indices, isso dá muito poder pros arrays. Mas não devemos usar arrays quando faz mais sentido usar objetos, senão muita coisa acaba sendo tratada como array mesmo não sendo a melhor forma.</p>
+
+<h2>Function</h2>
+
+<p>As funções são declaradas como no JS <code>function nome($parametro) &#123; codigo &#125;</code>. É interessante entender que o motivo de criar uma função é não precisar repetir código. Criamos uma função para poder chamá-la em vários lugares do meu código.</p>
+
+<p>E o <code>return</code> para que serve? Para quando eu chamar essa função em algum lugar do meu código, ela retornar algum valor. Sem return, ela apenas executa a função mas não retorna nada.</p>
+
+<p>Isso é até conceitual. Quando não retorna nada, apenas executa, chamamos de 'subrotinas' e quando retorna algo chamaos de função. No php as duas coisas são declaradas como function. Mas tem linguagens que faz essa separação.</p>
+
+<h2>Include e Require</h2>
+
+<p>Temos uma função e queremos acessar essa função em outro arquivo. Para isso incluimos o <code>include 'nomeComponente.php'</code>. Só que se esse arquivo não for encontrado o include permite continuar a execução. Para evitarmos que o programa continue e já nos avise sobre o erro, incluimos o <code>require 'nomeComponente.php</code> </p>
+
+<h2>Warning x Notice x Error </h2>
+
+<p>O php tem várias trativas de erros. Os principais são esses três. O Warning é quando o php percebe alguma coisa estranha mas consegue continuar executando o código. O Notice é quando o php dá um jeito de resolver o código (por exemplo quando tenta acessar algum item do array, não encontra e retorna nulo). O error é quando ele não consegue executar.</p>
+
+<h2>Passagem de parametro por valor ou por referencia</h2>
+
+<p>Dificilmente se aconselha a passar um parametro por referência. Isso porque quando fazemos isso estamos passando a variável original no parametro e, portanto, ela será modificada na nova função que estamos chamando. Para fazer isso, ao invés de fazer <code>conta ($titular)</code> que é uma passagme por valor, fazemos <code>conta (&$titular)</code>com o & na frente da variável.</p>
+
+<h2>List => Pegando os valores de um array</h2>
+
+<pre><code [highlight]='codePhp4'></code></pre>
+
+<h2>Unset => Removendo uma variável</h2>
+
+<p>Ao fazer <code>unset($variavel)</code> ou <code>unset($array[2])</code> estaremos removendo essa variável da memória.</p>
+
+<h2>subindo em localhost (servidor local)</h2>
+
+<p>é só digitar, no terminal, <code>php -S localhos:8000</code> ou a porta que eu quiser</p>
+
+<p>Pronto, é só fazer isso que ele vai abrir no navegador nosso código, procurando pelo index.php</p>
+
+<h2>PHP e HTML</h2>
+
+<p>Como o PHP foi projetado para web, a inserção de HTML no código PHP é bem simples. Finalizamos a escrita de php com ?> e podemos escrever o que quiser após isso, inclusive HTML.</p>
+
+<pre><code [highlight]='codePhp5'></code></pre>
+
+<h2>MbString</h2>
+
+<p>string é string, pra que mbstring? Perá lá, vamos entender melhor...</p>
+
+<pre><code [highlight]='codePhp6'></code></pre>
+
+<p>'AçUCAR E LIMãO' ficou meio estranho né? Porque o 'ç' e o 'ã' ficaram em minusculas? E porque a contagem da string foi 16 se deveria ser 14. O que acontece aqui, embaixo dos panos, é que o PHP está lendo bytes e não as letras em si. E cada caracter ´normal´ conta como 1 byte. Os caracteres especiais como 'ç' e 'ã' contam como 2 bytes. Isso é conhecido como <b><a href="https://www.php.net/manual/pt_BR/book.mbstring.php"></a>caracter multibyte</b></p>
+
+<p>Para resolver esse problema o PHP tem uma extensão chamada de mb (que é de multibyte). Para usá-la temos que habilitar essa extensão no nosso computador (ou servidor).</p>
+
+<pre><code [highlight]='codePhp7'></code></pre>
+
+<h2>Programação Procedural x Orientada a Objeto</h2>
+
+<p>Eu aprendi Orientação à Objeto com o verboso <b>Java</b>. Apesar de não ter aplicado o Java em nenhum projeto, foi com ele que eu entendi o que é a POO. E como foi a minha primeira interação com uma linguagem eu me familiarizei tanto com OO que eu não entendia muito bem como daria pra ser diferente disso</p>
+
+<p>A programação procedural (ou programação procedimental ou até programação imperativa) é baseada em rotinas/funções. O grande avanço da orientação à objeto foi fazer com que o código fique mais fácil de dar manutenção, mais legível e reutilizável. O trade off é que precisamos criar modelagens e a curva de aprendizado é um pouco maior que a programação procedural. Criamos classes para tudo, com atributos e métodos dentro das classes. E essas classes são apenas modelos, elas por si só não executam nada. Para se tornar um objeto real temos que instanciá-las em algum momento.</p>
+
+<p>Isso significa que dá pra programar a mesma coisa com os dois paradgimas. E na programação procedural existem atributos e métodos, mas que possivelmente podem estar em locais diferentes do código (e não dentro de uma classe como no OO).</p>
+
+<p>O PHP em seu inicio não foi modelado com o paradigma de orientação a objeto. Ele começou a suportar orientação a objeto na versão 3. Diferente do Java que tudo gira em torno do POO.</p>
+
+<h5>Guardando dados por valor x por referencia</h5>
+
+<p>Quando criamos um objeto em PHP o seus dados são guardados em uma referencia. Isso é um pouco confuso, mas ao criamos um objeto e guardamos em uma instância $a, ela não será armazenada na instância $a. E sim a um objeto de uma classe no qual essa instância $a se refere</p>
+
+<p>Bem confuso. Mas isso significa, na prática, que se ao criar uma variável $b = $a, se eu mudar a variável $b também será mudada a variável $a, pois as duas apontam pra mesma referência. E isso não é verdade quando criamos uma variável que não é um objeto, por exemplo, $c = (int) 10. Se criarmos uma variável $d = $c e mudarmos a variável $d = (int) 12, a variável $c continua valendo 10.</p>

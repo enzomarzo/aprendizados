@@ -22,7 +22,7 @@
 
 <pre><code [highlight]='codeColab2'></code></pre>
 
-<p><b>Gráficos</b>: Se quisermos na tela um gráfico pizza (ou torta) é só digitarmos a função plot.pie(). Como por exemplo <code>dados['tratamento'].value_counts().plot.pie()</code>. Ou um gráfico de barras com <code>.plot.bar</code>. O pandas utiliza uma biblioteca chamada <b>matplotlib</b> para fazer esses gráficos.</p>
+<p><b>Gráficos</b>: Se quisermos na tela um gráfico pizza (ou torta) é só digitarmos a função plot.pie(). Como por exemplo <code>dados['tratamento'].value_counts().plot.pie()</code>. Ou um gráfico de barras com <code>.plot.bar</code>. O pandas utiliza uma biblioteca chamada <b>matplotlib</b> para fazer esses gráficos.</p>   
 
 <p><code>dados['composto'].value_counts()[0:5]</code>. É simples, mas temos que olhar os códigos por partes. É como ler uma frase, lendo palavra por palavra. Então temos a tabela dados e estamos pegando apenas a coluna de composto. Depois estamos contando quanto existe de cada composto. E por fim estamos pegando apenas os itens 0, 1, 2, 3 e 4. Ou seja, os 5 primeiros itens do array. Já que o value_counts lista primeiro o componente com mais frequencia, então teremos o top 5 mais frequentes.</p>
 
@@ -45,3 +45,19 @@
 <p>Filtrando por coluna e tabela, aumentando cada elemento do gráfico e criando a primeiro resultado com alguns padrões estipulados pelo pandas </p>
 
 <pre><code [highlight]='codeColab6'></code></pre>
+
+<p><b>Negócio e Dados:</b> muito se fala da importancia de olhar os dados sabendo o que está fazendo e procurando. Não olhar os dados somente como meros numeros e informações. Na imersão da Alura fizeram questão de colocar uma biologa junto do time que estava explicando sobre os dados, pois os dados eram sobre material genetico, remedio e coisas relacionadas a biologia. Então é essa junção entre entender do negócio e saber consultar os dados que torna o negócio mais interessante.</p>
+
+<p><b>.Crosstab</b> Mais um método do pandas. Ele cruza as informações que passamos e cria uma matriz com os dados. Daria pra fazer tudo via query mas o pandas facilita.</p>
+
+<pre><code [highlight]='codeColab7'></code></pre>
+
+<p>No caso acima, no tempo de 24h a dose D1 foi encontrada 3.886. Então nesse caso temos uma matriz que nos diz quantas vezes as doses com 24h, 48h e 72h coincidem com D1 e com D2</p>
+
+<h2>Machine Learning</h2>
+
+<p>Popularizado nas duas ultimas décadas mas estudado desde a decada de 50, o Machine Learnin é o processo do computador aprender algo sem ele ter sido programado exatamente para isso (escrito por Arthur Samuel em 1959 - 'Field of study that gives computers the ability to learn without being explicitly programmed)'.</p>
+
+<p>O Machine Learning se popularizou por 2 motivos principais. O primeiro é o grande volume de dados. E o segundo é o poder computacional para processar esses dados. Image por exemplo a abertura de conta em um banco. O processo de identificação da nossa imagem é um processo de machine learning. O computador consegue reconhecer quem sou eu a partir de uma analise de milhões de fotos.</p>
+
+<p>Scikit Learn: é uma <a href='https://scikit-learn.org/stable/'>biblioteca</a> bastante famosa de machine learning. </p>
