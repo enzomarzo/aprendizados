@@ -105,6 +105,56 @@ echo "$bebida é $cor e $substancia o faz especial.\n";
   $conta001 -> saldo: 10000000.00
   `
 
+  codePhp9 =`//com if + else
+  function formatDate($date)
+  {
+    $format = DateTime::ATOM;
+
+    if($date instanceof DateTime) {
+      $d = date -> format ( $format )
+    } elseif (is_numeric($date)) {
+      $d = date($format, $date)
+    } else {
+      $d = (string) $date;
+    }
+    return $d;
+  }`
+
+  codePhp10 = `//sem if + else
+  function formatDate($date)
+  {
+    if ($date instanceof DateTime) {
+      return date -> format ( $format )
+    }
+
+    if (is_numeric($date)) {
+      return date($format, $date)
+    }
+
+    return (string) $date
+
+  }`
+
+  codePhp11 = `class Conta {
+
+    private string $nome;
+    private string $CPF;
+    private double $saldo;
+    public static $numeroDeContas = 0
+    //o Static significa que o numero de contas não é um atributo das instancias e sim um atributo da classe em sí.
+
+    public function __construct(string $CPF, string $nome)
+    {
+      $this -> CPF = $cpf;
+      $this -> nome = $nome;
+      $this -> saldo = -;
+      %Conta::numeroDeContas; // com :: eu acesso atributo static
+      //o atributo static não acesso com o this, pois o this acessa a instância. Ou seja, quando eu crio o new ContaEnzo() o this vai se referir ao ContaEnzo. E o atributo static se refere ao modelo 'Conta' e não a ContaEnzo().
+    }
+
+  }`
+
+
   constructor() { }
 
   ngOnInit(): void {

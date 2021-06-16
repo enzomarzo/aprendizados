@@ -115,3 +115,40 @@
 <p>Quando criamos um objeto em PHP o seus dados são guardados em uma referencia. Isso é um pouco confuso, mas ao criamos um objeto e guardamos em uma instância $a, ela não será armazenada na instância $a. E sim a um objeto de uma classe no qual essa instância $a se refere</p>
 
 <p>Bem confuso. Mas isso significa, na prática, que se ao criar uma variável $b = $a, se eu mudar a variável $b também será mudada a variável $a, pois as duas apontam pra mesma referência. E isso não é verdade quando criamos uma variável que não é um objeto, por exemplo, $c = (int) 10. Se criarmos uma variável $d = $c e mudarmos a variável $d = (int) 12, a variável $c continua valendo 10.</p>
+
+<h3>Early Return</h3>
+
+<p>Esse conceito é interessante. É sobre melhorar o código e sobre escrever <b>menos elses</b>. Tem gente que acredita inclusive que não se deve escrever ´else´ ;).</p>
+
+<p>A principio isso me cheira como uma ´gambiarra´. Isso porque criamos uma função do tipo <code>void</code> (que não tem retorno). E digitamos o <code>return</code> para que a função acabe ali. Ou seja, o retornar tem o sentido de ´parar´ de executar.</p>
+
+<p>vejamos exemplo:</p>
+
+<pre><code [highlight]='codePhp9'></code></pre>
+
+<pre><code [highlight]='codePhp10'></code></pre>
+
+<p>Alguns conceitos importantes de OO</p>
+<ul>
+  <li><b>Abstração:</b> trazer o mundo real mais pra perto da programação. Objetos com propriedade e métodos. Uma pessoa tem altura, peso.. (propriedades), anda, corre, pula (metodos)</li>
+  <li><b>Encapsulamento:</b> muitas vezes é importante chamar um método de um objeto sem precisarmos entender a fundo o que ele faz. Então quando chamamos o pessoa.pula() não precisamos entender tudo o que é feito dentro do sistema nervoso para a pessoa pular. Precisamos saber apenas que a pessoa pula.</li>
+  <li><b>Herança:</b> evita duplicar codigo. Objetos herdam objetos. Pessoas herdam caracteristas de mamiferos.</li>
+  <li><b>Polimorfismo:</b> A pessoa herda o método andar de outros mamiferos, mas o andar do ser humano é diferente e por isso é interessante herdar do mamífero mas precisamos implementar algumas coisas nesse método.</li>
+</ul>
+
+<h3>Static</h3>
+
+<p>imagine que eu tenha uma classe que cria contas de banco e que eu quero contar quantas contas foram criadas (sem precisar ir ao banco de dados):</p>
+
+<pre><code [highlight]='codePhp11'></code></pre>
+
+<p>No caso acima o atributo esta publico, então eu ou alguém que estivesse programando poderia fazer numeroDeContas = 10. E queremos evitar que isso seja possível. Para resolver essa burocratização saúdavel transformamos o atributo em <code>private static $numeroDeContas</code> e criamos um método static <code>public static function recuperarNumeroDeContas() { return Conta::$numeroDeContas }</code></p>
+
+<p>E no PHP ao invés de chamar pelo nome da classe como nesse caso <code>Conta::$numeroDeContas</code> eu poderia chamar pelo <code>self</code>. Ficaria então <code>self::$numeroDeContas</code>. Tanto faz!</p>
+
+<p>Uma observação importante é que atributos/métodos estáticos devem ser criados apenas quando necessário. Muitos métodos estáticos prejudicam a testabilidade do projeto e em um projeto não é (ou não deveria ser) tão comum seu uso.</p>
+
+<h3>Imutabilidade</h3>
+
+<p>Um atributo da minha conta é o CPF. E quando uma pessoa cria uma conta em meu banco ela não pode mais mudar o CPF. Portanto esse atributo CPF é imutável. Para fazer isso eu coloco o atributo como privado <code>private string $CPF;</code> e <b>não crio Setters</b>. Então se o método é inacessível e se nao tem uma forma de 'settar' esse atributo não há formas de mudar esse CPF.</p>
+
