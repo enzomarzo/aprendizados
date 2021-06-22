@@ -130,9 +130,9 @@
 
 <p>Alguns conceitos importantes de OO</p>
 <ul>
-  <li><b>Abstração:</b> trazer o mundo real mais pra perto da programação. Objetos com propriedade e métodos. Uma pessoa tem altura, peso.. (propriedades), anda, corre, pula (metodos)</li>
-  <li><b>Encapsulamento:</b> muitas vezes é importante chamar um método de um objeto sem precisarmos entender a fundo o que ele faz. Então quando chamamos o pessoa.pula() não precisamos entender tudo o que é feito dentro do sistema nervoso para a pessoa pular. Precisamos saber apenas que a pessoa pula.</li>
-  <li><b>Herança:</b> evita duplicar codigo. Objetos herdam objetos. Pessoas herdam caracteristas de mamiferos.</li>
+  <li><b>Abstração:</b> trazer o mundo real mais pra perto da programação. Objetos com propriedade e métodos. Uma pessoa tem altura, peso.. (ou seja, propriedades), anda, corre, pula (que são os métodos)</li>
+  <li><b>Encapsulamento:</b> muitas vezes é importante chamar um método de um objeto sem precisarmos entender a fundo o que ele faz. Então quando chamamos o pessoa.pula() não precisamos entender tudo o que é feito dentro do sistema nervoso para a pessoa pular. Precisamos saber apenas que a pessoa pula. Quando apertamos o botão de um controle não precisamos saber tudo que acontece por trás.</li>
+  <li><b>Herança:</b> evita duplicar codigo é um dos mantras da orientação a objeto. E isso não apenas para facilitar a escrita. Evitar duplicação facilita a leitura e a manutenção. Pessoas herdam caracteristas de mamiferos que herdam caracteristicas de animais. <ul><li>O Paulo da Alura/Caelum publicou um post lá em 2006 citando outro post que ficou famoso em 1986 do problema em usar herança só pra economizar escrita de código (o exemplo que ele é deu é que, por exemplo, cachorro herda gato porque, por exemplo, a classe gato anda e tem patas) <a href="https://blog.caelum.com.br/como-nao-aprender-orientacao-a-objetos-heranca/">link do post</a>. </li></ul></li>
   <li><b>Polimorfismo:</b> A pessoa herda o método andar de outros mamiferos, mas o andar do ser humano é diferente e por isso é interessante herdar do mamífero mas precisamos implementar algumas coisas nesse método.</li>
 </ul>
 
@@ -152,3 +152,18 @@
 
 <p>Um atributo da minha conta é o CPF. E quando uma pessoa cria uma conta em meu banco ela não pode mais mudar o CPF. Portanto esse atributo CPF é imutável. Para fazer isso eu coloco o atributo como privado <code>private string $CPF;</code> e <b>não crio Setters</b>. Então se o método é inacessível e se nao tem uma forma de 'settar' esse atributo não há formas de mudar esse CPF.</p>
 
+<h3>Herança</h3>
+
+<p>já coloquei acima que Herança e Polimorfimo é uma das principais características de Orientação a Objeto.</p>
+
+<p>Eu vou tentar explicar sobre henrança sem colocar código</p>
+
+<p>Vamos supor que eu esteja criando um Banco. E nesse banco eu tenha Conta Corrente, Conta Poupança e Conta Salário. Todas elas são parecidas, mas não iguais. Não faz muito sentido eu criar três classes que tenha um monte de atributo e método iguais né? Por exemplo, o atributo agência, número da Conta, Titular e os métodos sacar, depositar e transferir seriam iguals. Para não ter toda essa repetição de código, podemos dizer que Conta Poupança e Conta Salário extends da Conta Corrente. Ou seja, elas herdam as caracteristicas da Conta Corrente</p>
+
+<p>Muito mais simples, não? Só digitar <code>ContaPoupanca extends ContaCorrente</code> que eu sei que ContaPoupanca vai conter tudo que contem Conta Corrente. E se eu quiser implementar outros atributos e métodos, é só digitar esses casos específicos.</p>
+
+<p>Agora vamos imaginar que a Conta Popupança tenha um custo de transferência menor que a ContaCorrente. Para isso é só sobrescrever o método <b>transferir</b>.</p>
+
+<p>Mas ainda fica estranho ContaPoupanca estender de ContaCorrente já que são duas coisas diferentes. Não parece muito 'pai e filho'. Parece mais irmãos </p>
+
+<p>É aí que entra o <code>abstract</code>. Criamos uma classe <b>abstrata</b>. É um pouco confuso porque a 'classe' em si já é uma abstração. Nos instanciamos a classe que vai se tornar um objeto. E a classe abstrata é uma abastração ainda maior. Porque a classe abstrata não vira um objeto. Ou seja, é impossível criar uma ´Conta´. A pessoa tem que criar uma conta corrente, poupança ou salário. Só Conta não existe. A Classe Conta serve como ´molde´ das classes não abstratas.</p>
