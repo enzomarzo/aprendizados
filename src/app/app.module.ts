@@ -17,9 +17,11 @@ import { OrientacaoObjetoComponent } from './javascript/orientacao-objeto/orient
 import { WordpressComponent } from './wordpress/wordpress.component';
 import { PhpComponent } from './php/php.component';
 import { DadosComponent } from './dados/dados.component';
+import { ReactComponent } from './react/react.component';
+import { FirebaseComponent } from './firebase/firebase.component';
 
 @NgModule({
-  declarations: [AppComponent, SidenavComponent, HomeComponent, JavascriptComponent, OrientacaoObjetoComponent, WordpressComponent, PhpComponent, DadosComponent],
+  declarations: [AppComponent, SidenavComponent, HomeComponent, JavascriptComponent, OrientacaoObjetoComponent, WordpressComponent, PhpComponent, DadosComponent, ReactComponent, FirebaseComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

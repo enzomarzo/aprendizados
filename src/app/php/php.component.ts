@@ -154,7 +154,18 @@ echo "$bebida é $cor e $substancia o faz especial.\n";
 
   }`
 
+  codePhp12 = `public function __toString()
+  {
+      return "{$this->cidade}, {$this->bairro}, {$this->rua}, {$this->numero}";
+  }`
 
+  codePhp13 =`public function __get($name)
+  {
+      //transfer o valor passado, por exemplo, rua para getRua
+      //concatenando -> get com primeira maiscula do rua, virando getRua
+      $getFunction = 'get' . ucfirst($name);
+      return $this->$getFunction();
+  }`
   constructor() { }
 
   ngOnInit(): void {

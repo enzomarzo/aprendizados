@@ -1,0 +1,67 @@
+<h1>React</h1>
+
+<p>Eu já tinha atuado em um projeto em Angular, da versão 4 evoluindo até a versão 8. E aqui nesse link eu tenho todo o meu aprendizado em Angular</p>
+
+<p>O React é hoje o framework JS mais utilizado. O que eu geralmente escuto é que Angular é mais voltado para sistemas de grandes corporações e o react ficou mais famoso para ser utilizado em web app no geral.</p>
+
+<p>Estou fazendo uma semana de curso da NLW. E vou colocando as semelhanças e diferenças que eu aprendi com o Angular</p>
+
+<h2>Iniciando o webapp</h2>
+
+<p><b>requisitos:</b> Instalar node e yarn</p>
+
+<p><code>yarn create react-app letmeask --template typescript</code></p>
+
+<p>letmeask é o nome do projeto. E o --template typescript é porque queremos utilizar typescript ao invés de JS \o/ .</p>
+
+<p>O <b>Angular</b> já é criado por padrão em Typescript. E isso é muito bom pois o TS é um superset do JS, com tipagem e outros benefícios.</p>
+
+<h2>A estrutura de criação</h2>
+
+<img src="estruturaReact.jpg" alt="Estrutura do React">
+
+<p>Temos ali embaixo o <b>.gitIgnore</b> que é do Git. O <b>package.json</b> contendo os pacotes instalados o <b>Readme</b> e <b>tsconfig.json</b> com as configurações do Typescript. Todos eles iguais ao Angular. E temos também o <b>yarn.lock</b>que é um gerador de dependencias do yarn, similar ao package-lock.json do Angular</p>
+
+<p>O <b>node_modules</b> é imensa pasta do Node, que também temos no Angular.</p>
+
+<p>Na hora que instalamos o React, dentro da pasta Public e da pasta Src vem alguns outros arquivos (tipo o logo do react, testes e os arquivos css) que não fazem sentido pra começar o negócio.</p>
+
+<p>Dentro da pasta public tem o <b>index.html</b> que é o arquivo mais comum em qualquer web app</p>
+
+<p>Então as únicas coisas diferentes que tem são os arquivos dentro do 'src'</p>
+
+<p>E a primeira coisa estranha são esses arquivos <b>.tsx</b>. TS é typescript. E o X ? O X é XML. <b>O react</b>, diferente do angular, <b>utiliza o HTML dentro do Javascript</b>. Ou, nesse caso que estamos trabalhando com ts, dentro do Typescript.</p>
+
+<p>Portanto o único html que temos é o index.html dentro do public (o que faz sentido já que o react é estruturado para funcionar como uma SPA). E o index.tsx vai importar as bibliotecas do React, do react-dom (se trabalharmos com app importaria o react-native) e o App que é de onde vai se iniciar nossa aplicação. Seria como o app.component.ts do Angular. </p>
+
+<h2>Conceitos do React</h2>
+
+<p><b>JSX:</b> JS com HTML no mesmo lugar. E pra confundir um pouco mais, os componentes JS também ficam dentro de tags. Para diferenciar uma da outra, as tags das functions do js são sempre criadas em maiúsculas. <code>&lt;div&gt;</code> é uma tag html e <code>&lt;Div&gt;</code> é uma <code>function Div()</code> do JS.</p>
+
+<p><b>Function x class:</b> no react, os componentes se iniciam com <code>export function</code> ao invés de <code>export Class</code> do Angular. As versões mais antigas do react usavam class. Mas passaram a utilizar function.</p>
+
+<p><b>Componentes:</b> assim como o angular, tudo no react é um componente. E a junção desses componentes geram as páginas.</p>
+
+<p><b>Propriedades:</b> esse conceito é bem próprio do react. As <code>functions</code> recebem um argumento chamado 'props' (que significa propriedades) e retornam elementos React. Vamos ver um exemplo abaixo:</p>
+
+<pre><code [highlight]='codeReact1'></code></pre>
+
+<p><b>Estado:</b> também é um conceito do react. O state é similar ao props mas é privado e controlado pelo componente. Ainda está confuso pra mim.</p>
+
+<h2>Comandos úteis</h2>
+
+<p><code>yarn start</code> => sobe um servidor local no localhost:3000</p>
+
+<h2>Firebase</h2>
+
+<p><a routerlink="/firebase">Nesse link</a> eu explico um pouco melhor sobre o firebase. Para instalar ele no React é preciso instalar <code>yarn add firebase</code>, depois incluir um arquivo firebase.ts (geralmente na pasta service). Dentro desse arquivo ficam a const firebaseonfig que pego nas configurações de instalação e importo esse servico dentro do index.tsx um <code>import './services/firebase'</code></p>
+
+<h2>Rotas</h2>
+
+<p>Diferente do Angular, precisamos importar um pacote de rotas. O mais famoso é o react-router-dom. E como ele não foi criadao em TS, para dar suporte aos tipos executamos também o <code>@types/react-router-dom -D</code>. O -D é para que crie apenas no ambiente de desenvolvedor (já que o typescript só serve para desenvolvimento. Em produção é js não tipado).</p>
+
+<p>E ai importamos o <code>BrowserRouter, Route</code> dentro da app.tsx </p>
+
+<p>Vai ficar assim:</p>
+
+<pre><code [highlight]='code'></code></pre>

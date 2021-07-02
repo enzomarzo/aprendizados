@@ -129,12 +129,14 @@
 <pre><code [highlight]='codePhp10'></code></pre>
 
 <p>Alguns conceitos importantes de OO</p>
-<ul>
-  <li><b>Abstração:</b> trazer o mundo real mais pra perto da programação. Objetos com propriedade e métodos. Uma pessoa tem altura, peso.. (ou seja, propriedades), anda, corre, pula (que são os métodos)</li>
+<ul style="list-style-type: none;">
+  <li><b>Abstração:</b> trazer o mundo real mais pra perto da programação. Objetos com propriedade e métodos. Uma pessoa tem altura e peso (ou seja, propriedades). Essa pessoa anda, corre e pula (os métodos)</li>
   <li><b>Encapsulamento:</b> muitas vezes é importante chamar um método de um objeto sem precisarmos entender a fundo o que ele faz. Então quando chamamos o pessoa.pula() não precisamos entender tudo o que é feito dentro do sistema nervoso para a pessoa pular. Precisamos saber apenas que a pessoa pula. Quando apertamos o botão de um controle não precisamos saber tudo que acontece por trás.</li>
-  <li><b>Herança:</b> evita duplicar codigo é um dos mantras da orientação a objeto. E isso não apenas para facilitar a escrita. Evitar duplicação facilita a leitura e a manutenção. Pessoas herdam caracteristas de mamiferos que herdam caracteristicas de animais. <ul><li>O Paulo da Alura/Caelum publicou um post lá em 2006 citando outro post que ficou famoso em 1986 do problema em usar herança só pra economizar escrita de código (o exemplo que ele é deu é que, por exemplo, cachorro herda gato porque, por exemplo, a classe gato anda e tem patas) <a href="https://blog.caelum.com.br/como-nao-aprender-orientacao-a-objetos-heranca/">link do post</a>. </li></ul></li>
-  <li><b>Polimorfismo:</b> A pessoa herda o método andar de outros mamiferos, mas o andar do ser humano é diferente e por isso é interessante herdar do mamífero mas precisamos implementar algumas coisas nesse método.</li>
+  <li><b>Herança:</b> evita duplicar codigo é um dos mantras da orientação a objeto. E não apenas para facilitar a escrita, evitar duplicação facilita a leitura e a manutenção. Pessoas herdam caracteristas de mamiferos que herdam caracteristicas de animais. <ul><li> Apenas como complemento, há que se tomar cuidado com tanta herança, o Paulo da Alura/Caelum publicou um post lá em 2006 citando outro post que ficou famoso em 1986 do problema em usar herança só pra economizar escrita de código (o exemplo que ele é deu é que, por exemplo, cachorro herda gato porque, por exemplo, a classe gato anda e tem patas) <a href="https://blog.caelum.com.br/como-nao-aprender-orientacao-a-objetos-heranca/">link do post</a>. </li></ul></li>
+  <li><b>Polimorfismo:</b> Uma pessoa é uma pessoa e também é um animal. Um gerente é um gerente e também é um funcionário. Podemos classificar esse gerente das duas formas - como gerente e como funcionário, a depender do que esteja me referindo. As vezes, para dizer que ele vai evoluir na empresa, classificamos (tipamos) ele como funcionário, assim podemos mudá-lo futuramente para diretor.</li>
 </ul>
+
+<p>A Herança também ajuda a quebrar diversos <b>ifs</b> em uma classe que possa ficar monstruosa. Imagine o mesmo cenário de ter uma classe funcionários. Poderiamos só ter uma classe funcionários e nele colocar 'if' o funcionário for Gerente, bonificar tanto. 'if' for diretor bonificar tanto. E cada método que criarmos precisaremos de ifs, como um método para aprovação, 'if' diretor aprova acima de 20 mil, 'if' gerente aprova acima de.. </p>
 
 <h3>Static</h3>
 
@@ -166,4 +168,50 @@
 
 <p>Mas ainda fica estranho ContaPoupanca estender de ContaCorrente já que são duas coisas diferentes. Não parece muito 'pai e filho'. Parece mais irmãos </p>
 
-<p>É aí que entra o <code>abstract</code>. Criamos uma classe <b>abstrata</b>. É um pouco confuso porque a 'classe' em si já é uma abstração. Nos instanciamos a classe que vai se tornar um objeto. E a classe abstrata é uma abastração ainda maior. Porque a classe abstrata não vira um objeto. Ou seja, é impossível criar uma ´Conta´. A pessoa tem que criar uma conta corrente, poupança ou salário. Só Conta não existe. A Classe Conta serve como ´molde´ das classes não abstratas.</p>
+<p>É aí que entra o <code>abstract</code>. Criamos uma classe <b>abstrata</b>. É um pouco confuso porque a 'classe' em si já é uma abstração. Nós instanciamos a classe que vai se tornar um objeto. E a classe abstrata é uma abastração ainda maior (abstração da abstração). Porque a classe abstrata não vira um objeto. Ou seja, é impossível criar uma 'Conta'. A pessoa tem que criar uma conta corrente, poupança ou salário. Só 'Conta' não existe. A Classe Conta serve como ´molde´ das classes não abstratas.</p>
+
+<p>E além de classes abstratas, existem os métodos abstratos. Eles servem pra dizer 'meus filhos, vocês são obrigados a implementar esse método aqui'.</p>
+
+<p><code>abstract protected function taxaSaque(): float;</code> E nem é preciso colocar as chaves/bloco do método. Ou seja, não precisamos implementar o método. Apenas colocar o nome dele e se possível o retorno que ele deve ter.</p>
+
+<p>Se uma classe tiver métodos abstratos ela precisa ser uma classe abstrata. Porém uma classe abstrata não é obrigatório que tenha um ou todos seus métodos abastratos.</p>
+
+<h2>Interfaces</h2>
+
+<p>Na herança você consegue criar classes filhas facilmente. É possível herdar de classes abstratas e de classes concretas. Em classes abstratas você consegue criar atributos e métodos de tudo quanto é jeito, public, protected e abstrato.</p>
+
+<p>As interfaces só podem ter métodos abstratos (não tem nem atributos). Ou seja, todas as classes filhas de interfaces tem que usar/recriar/fazer seus métodos. Algumas pessoas utilizam como um 'contrato'. Então por exemplo temos gerente e diretor que herdam as caracteristicas de funcionario. E o gerente, o direto e o cliente precisam de alguma função especifica (por exemplo se logar no app). Para resolver isso, criamos uma interface Autenticacao que tem um unico método de fazer login.</p>
+
+<p>Uma classe pode herdar de apenas uma outra classe (isso no PHP e no Java por exemplo). Mas pode implementar quantas interfaces quiser. Então no caso do PHP que não é possível herdar de mais de uma classe, criar interfaces ajuda a resolver esse problema de herança multipla. </p>
+
+<h2>Métodos Mágicos em PHP</h2>
+
+<p>Existem alguns métodos do próprio PHP. Sabemos que são métodos do PHP quando tem dois underscore. Então, por exemplo, o método construtor <code>function __constructor</code>.</p>
+
+<p>Bom, vamos pensar no seguinte. Temos o código abaixo</p>
+
+<p><code>$enderecoEnzo = new Endereco('Rua São João', '30' , 'Centro', 'São Paulo')</code>.</p>
+
+<p>E eu quero exibir esse endereço na tela. A forma mais direta de fazer seria:</p>
+
+<p><code>echo $enderecoEnzo->getCidade() . ', ' . $enderecoEnzo->getBairro() . ', ' . $enderecoEnzo->getRua() . ', ' . $enderecoEnzo->getNumero();</code></p>
+
+<p>Como facilitar isso para não ter que digitar toda hora esse código gigante?</p>
+
+<p>Uma alternativa é dentro da classe endereço criar uma função EnderecoCompleto() com o return acima (sem o echo) e depois digitar apenas <code>echo enderecoEnzo->EnderecoCompleto()</code></p>
+
+<p>Mas existe um jeito ainda mais fácil de fazer isso com métodos mágicos do PHP. E esse é o método toString()</p>
+
+<pre><code [highlight]='codePhp12'></code></pre>
+
+<p>Daria na mesma criar um método EnderecoCompleto() ou o método __toString. A diferença é que com o ToString é só chamar a variável <code>$enderecoEnzo</code> que eu vou receber o retorno da string. Não preciso passar nenhum método</p>
+
+<p>Outra coisa que podemos fazer no php é passar os atributos sem o getters e setters e ainda assim mantendo privado os atributos. Isso é feito através dos métodos mágicos __get e __set.</p>
+
+<h2>Não permitindo heranças</h2>
+
+<p>O PHP pode barrar o uso de herança, caso não queiramos que uma classe seja utilizada em outros lugares usando o <code>final</code></p>
+
+<p><code>final class Endereco ..</code></p>
+
+<p>O <code>final</code> também pode ser utilizado nos métodos e atributos, para não permitir que eles sejam reutilizados em outros lugares.</p>
