@@ -166,6 +166,7 @@ echo "$bebida é $cor e $substancia o faz especial.\n";
       $getFunction = 'get' . ucfirst($name);
       return $this->$getFunction();
   }`
+  
   constructor() { }
 
   ngOnInit(): void {

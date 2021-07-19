@@ -9,8 +9,8 @@ export class SidenavComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    
-    //Criando o collapse na unha.
+
+    //creating sidenav with JS vanilla
     const collapse: NodeListOf<Element> = <NodeListOf<Element>>(document.querySelectorAll('.snav-collapse'));
     for (let i = 0; i < collapse.length; i++) {
       collapse[i].addEventListener('click', function () {

@@ -1,0 +1,31 @@
+<h1>CRUD</h1>
+
+<p><b>Request e Response:</b> muitas vezes aparece abreviado, como <b>req</b> e <b>res</b>.</p>
+
+<p><span style="color: red;">https://</span><span style="color:blue">alura.com/</span><span style="color:green">frontend</span><span style="color:yellow">?id=1</span></p>
+
+<ul>
+  <li><b>https://</b> => Protocolo que fará a comunicação com o servidor</li>
+  <li><b>alura.com</b> => dominio que será transformado em IP e porta de entrada. Por exemplo 127.221.108.20:8080.
+  <li><b>frontend</b> => Aqui já estamos dentro do servidor. Esse seria o caminho/path que queremos acessar.
+  <li><b>?id=1</b> => Esse seriam os parâmetros. São as query strings. </li>
+</ul>
+
+<h2>Fetch</h2>
+
+<p>É uma API do javascript. É mais atual e mais poderosa que a antiga XMLHttpRequest. Essa função que passamos no JS lida com requisições e respotas do servidor!</p>
+
+<p>Fetch retorna uma Promisse. A Promisse, com o nome diz, é apenas uma promessa que algo será enviado.</p>
+
+<p>Vamos ver um exemplo de como utilizar o fetch. Ele precisa de um parâmetro que é a URL</p>
+<pre><code [highlight]='codeCrud1'></code></pre>
+
+<p>Bom, retornou uma promisse, mas ainda não estamos pegando o modelo do json que queremos. Para isso temos que fazer o seguinte:</p>
+
+<pre><code [highlight]='codeCrud2'></code></pre>
+
+<p>Agora, com os dois then - e podemos colocar mais then se quisermos - temos nossa resposta em formato json para pegar o dado que quisermos.</p>
+
+<p>Só um detalhe que vale dizer. E se digitarmos errado: </p>
+
+<pre><code [highlight]='codeCrud3'></code></pre>

@@ -1,3 +1,10 @@
+* {
+  font-family: "Popins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -8,15 +15,17 @@ h6 {
 }
 
 h1 {
-  text-align: center;
-  font-size: 1.8;
-  font-weight: 600;
-}
+  display:flex;
+  align-items: center;
 
-html,
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  &::before, &::after{
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #a8a8b3;
+    margin: 0 50px;
+  }
+
 }
 
 .card {
@@ -42,10 +51,4 @@ pre {
   border: 1px solid gray;
   border-radius: 4px;
   transition: border ease 1s;
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 100% !important;
-  }
 }

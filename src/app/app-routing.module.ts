@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: 'javascript/oo', component: OrientacaoObjetoComponent },
   { path: 'php', component: PhpComponent},
   { path: 'wordpress', component: WordpressComponent},
-  { path: 'ciencia-de-dados', component: DadosComponent}
-  { path: 'react', component: ReactComponent}
+  { path: 'ciencia-de-dados', component: DadosComponent},
+  { path: 'react', component: ReactComponent},
   { path: 'firebase', component: FirebaseComponent}
 ];
 

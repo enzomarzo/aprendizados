@@ -1,8 +1,14 @@
 <h1>Firebase</h1>
 
-<p>O Firebase é um back-end as a Service. Na imersão de React que eu fiz do NLW foi utilizado o Firebase para não precisar programar o back-end. O Firebase, que foi desenvolvido pelo Google, ele já dá um monte de coisas de mão beijada pra gente!</p>
+<p>O Firebase é um back-end as a Service. Na imersão de React que eu fiz do NLW foi utilizado o Firebase para não precisar programar o back-end. O Firebase, que foi desenvolvido pelo Google, nos concede um monte de coisas de fácil acesso.!</p>
 
-<p>Por exemplo: autenticação de usuário e Banco de dados (relacional e não relacional)</p>
+<p>A exemplo, 3 funcionalidades muito úteis: Servidor + Banco de Dados + Autentição de usuário</p>
 
-<p>Com poucos cliques eu gero essas duas coisas.</p>
+<p>No <b>React</b> ou <b>Angular</b> nós temos primeiro que instalar o firebase no projeto com <code>yarn add firebase</code> ou <code>npm i --save firebase</code>. Depois criamos um arquivo firebase.ts e importamos os modulos que queremos utilizar no projeto (por exemplo o /auth e o /database). Nesse arquivo da <a href="https://github.com/enzomarzo/nlw-LetMeAsk/blob/main/src/services/firebase.ts">aula do NLW </a>tem um exemplo.</p>
 
+<p>Também subimos um servidor nesse projeto. É só digitar <code>npm install -g firebase-tools
+</code>, depois precisamos nos logar no CLI do firebase <code>firebase login</code> e depois iniciarmos com <code>firebase init</code>. Tudo isso tem na página do Firebase. Ao fazer o init temos que sinalizar o que queremos (por exemplo: realtime database e hosting ) </p>
+
+<p>O firebase vai continuar perguntando algumas coisas. O site do <a href="https://create-react-app.dev/docs/deployment#firebase">create-react-app</a> tem essas informações para fazer o deploy utilizando o firebase.</p>
+
+<p>depois é só dar um <code>npm run build</code> e <code>firebase deploy</code></p>

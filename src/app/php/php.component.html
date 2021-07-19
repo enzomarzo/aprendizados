@@ -144,7 +144,7 @@
 
 <pre><code [highlight]='codePhp11'></code></pre>
 
-<p>No caso acima o atributo esta publico, então eu ou alguém que estivesse programando poderia fazer numeroDeContas = 10. E queremos evitar que isso seja possível. Para resolver essa burocratização saúdavel transformamos o atributo em <code>private static $numeroDeContas</code> e criamos um método static <code>public static function recuperarNumeroDeContas() { return Conta::$numeroDeContas }</code></p>
+<p>No caso acima o atributo esta publico, então eu ou alguém que estivesse programando poderia fazer numeroDeContas = 10. E queremos evitar que isso seja possível. Para resolver essa burocratização saúdavel transformamos o atributo em <code>private static $numeroDeContas</code> e criamos um método static <code>public static function recuperarNumeroDeContas() &#123;	  return Conta::$numeroDeContas &#125;</code></p>
 
 <p>E no PHP ao invés de chamar pelo nome da classe como nesse caso <code>Conta::$numeroDeContas</code> eu poderia chamar pelo <code>self</code>. Ficaria então <code>self::$numeroDeContas</code>. Tanto faz!</p>
 
