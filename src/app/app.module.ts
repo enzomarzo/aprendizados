@@ -19,11 +19,23 @@ import { PhpComponent } from './php/php.component';
 import { DadosComponent } from './dados/dados.component';
 import { ReactComponent } from './react/react.component';
 import { FirebaseComponent } from './firebase/firebase.component';
-import { CrudComponent } from './app/javascript/crud/crud.component';
 import { ArraysObjetosComponent } from './javascript/_principios/arrays-objetos/arrays-objetos.component';
+import { CrudComponent } from './javascript/crud/crud.component';
 
 @NgModule({
-  declarations: [AppComponent, SidenavComponent, HomeComponent, JavascriptComponent, OrientacaoObjetoComponent, WordpressComponent, PhpComponent, DadosComponent, ReactComponent, FirebaseComponent, CrudComponent, ArraysObjetosComponent],
+  declarations: [
+    AppComponent,
+    SidenavComponent,
+    HomeComponent,
+    JavascriptComponent,
+    OrientacaoObjetoComponent,
+    WordpressComponent,
+    PhpComponent,
+    DadosComponent,
+    ReactComponent,
+    FirebaseComponent,
+    CrudComponent,
+    ArraysObjetosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

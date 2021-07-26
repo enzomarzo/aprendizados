@@ -1,14 +1,14 @@
 <h1>React</h1>
 
-<p>Eu já tinha atuado em um projeto em Angular, da versão 4 evoluindo até a versão 8. E aqui nesse link eu tenho todo o meu aprendizado em Angular</p>
+<p>Eu tinha uma experiência anterior em Angular, da versão 4 até a versão 8. E aqui nesse link eu tenho todo o meu aprendizado em Angular</p>
 
-<p>O React é hoje o framework JS mais utilizado. O que eu geralmente escuto é que Angular é mais voltado para sistemas de grandes corporações e o react ficou mais famoso para ser utilizado em web app no geral.</p>
+<p>O React é hoje a lib/framework JS mais utilizada. O Angular acabou abarcando mais projetos corporativos (bem robusto e sem tanta indexação e SEO) e o React ficou bastante famoso e utilizado em tudo que é aplicação web.</p>
 
-<p>Estou fazendo uma semana de curso da NLW. E vou colocando as semelhanças e diferenças que eu aprendi com o Angular</p>
+<p>A partir de julho.2021 comecei a me aprofundar em React, fiz 2 imersões de uma semana e um bootcamp de 3 meses e colocarei aqui as semelhanças e diferenças que eu aprendi com o Angular</p>
 
-<h2>Iniciando o webapp</h2>
+<h2>Iniciando noos projeto</h2>
 
-<p><b>requisitos:</b> Instalar node e yarn</p>
+<p><b>requisitos:</b> Instalar node/yarn</p>
 
 <p><code>yarn create react-app letmeask --template typescript</code></p>
 
@@ -18,7 +18,7 @@
 
 <h2>A estrutura de criação</h2>
 
-<img src="estruturaReact.jpg" alt="Estrutura do React">
+<img src="../../assets/estruturaReact.jpg" alt="Estrutura do React">
 
 <p>Temos ali embaixo o <b>.gitIgnore</b> que é do Git. O <b>package.json</b> contendo os pacotes instalados o <b>Readme</b> e <b>tsconfig.json</b> com as configurações do Typescript. Todos eles iguais ao Angular. E temos também o <b>yarn.lock</b>que é um gerador de dependencias do yarn, similar ao package-lock.json do Angular</p>
 
@@ -33,6 +33,41 @@
 <p>E a primeira coisa estranha são esses arquivos <b>.tsx</b>. TS é typescript. E o X ? O X é XML. <b>O react</b>, diferente do angular, <b>utiliza o HTML dentro do Javascript</b>. Ou, nesse caso que estamos trabalhando com ts, dentro do Typescript.</p>
 
 <p>Portanto o único html que temos é o index.html dentro do public (o que faz sentido já que o react é estruturado para funcionar como uma SPA). E o index.tsx vai importar as bibliotecas do React, do react-dom (se trabalharmos com app importaria o react-native) e o App que é de onde vai se iniciar nossa aplicação. Seria como o app.component.ts do Angular. </p>
+
+<h2>Outras formas de iniciar projeto com React</h2>
+
+<p>NextJS / Gatsby / CRA</p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col-3">Nome</th>
+      <th scope="col-5">Entendendo</th>
+      <th scope="col-4">Frameworks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Static Rendering</td>
+      <td>Alguém acessa o site que chama o CDN e retorna um site estático</td>
+      <td>Gatsby, VuePress, Gridsome e também o Next.js</td>
+    </tr>
+    <tr>
+      <td>Client Side Rendering (CSR)</td>
+      <td>A CDN retorna os scripts/style e depois retorna o Bundle do Javascript e o HTML é renderizado no Browser. Caso precise consumir dados é feita uma chamada via REST API</td>
+      <td>React, Angular e Vue</td>
+    </tr>
+    <tr>
+      <td>Universal / Server Side Rendering (SSR)</td>
+      <td>Ao acessar a página é feita uma requisição ao servidor. O servidor faz a requisição via REST API, renderiza o HTML no próprio servidor e retorna para o usuário</td>
+      <td>Next.js, Nuxt.js e Angular Universal</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A diferença do Universal Rendering para o Server Side Rendering é que o Universal seria como um mix entre o Client Side e o Server Side. Isso porque no Client Side no qual os 3 famosos frameworks se basearam (React, Angular e Vue) não exigia o carregamos da página  ao navegar (que é o conceito de SPA). Já no modelo do Server Side existia o carregamento. O Universal renderiza tudo no servidor e ao mesmo tempo consegue fazer a navegação sem fazer o reload da página</p>
+
+<p>Tem um melhor? Cada um tem seu trade off. O <b>Static</b> quase não usa o servidor e acaba tendo uma perfomance muito boa. Sites estáticos geralmente carregam muito rápido e tem notas altas no Google Speed Site e outros medidores. Mas o build é lento e as manutenção mais dificeis. Para sites grandes ou que precisam de coisas mais dinamicas (como e-commerce ou noticias), complica. O <b>SPA</b> tem um load inicial mais lento, uma perfomance imprevisível e dificuldades para trabalhar com SEO. Mas como tudo é carregado no browser, a interação é fluida e rápida. o Server Side tem mais perfomance que o SPA, melhor desempenho de SEO e compartilhamento de código com o backend (em Node). Já o TTFB é mais lento (pois o TTFB é o tempo que o browser faz pra buscar algo no servidor. E o servidor precisa estar com tudo pronto). </p>
 
 <h2>Conceitos do React</h2>
 

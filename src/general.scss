@@ -14,41 +14,72 @@ h6 {
   margin: 8px 0;
 }
 
-h1 {
-  display:flex;
-  align-items: center;
-
-  &::before, &::after{
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: #a8a8b3;
-    margin: 0 50px;
-  }
-
+img {
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .card {
   min-height: 200px;
 }
 
-pre {
-  display: flex;
-  word-wrap: break-word;
 
-  code {
-    flex: 1;
-    line-height: 1.5em;
-    font-size: 13px;
-    min-height: 100%;
-    padding: 1em 1.2em;
-  }
+code {
+  flex: 1;
+  line-height: 1.5em;
+  font-size: 12px;
+  font-family: 'Roboto';
+  min-height: 100%;
+  background-color: #282c34;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
 }
+
 
 .hljs {
   margin: 0 1em;
+  font-family: 'roboto';
+  font-size: 12px;
   padding: 10px;
-  border: 1px solid gray;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width:fit-content;
   border-radius: 4px;
   transition: border ease 1s;
+}
+
+
+/* override Material indigo-pink */
+
+.mat-h1, .mat-headline, .mat-typography h1 {
+  font-size: 1.8rem;
+  font-family: Popins, sans-serif;
+  margin-bottom: 35px;
+  display:flex;
+  align-items: center;
+
+  &::before, &::after{
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background: #a8a8b3;
+    margin: 0 60px;
+  }
+
+}
+
+.mat-h2, .mat-title, .mat-typography h2 {
+  font-size: 1.5rem;
+  font-family: Popins, sans-serif;
+  margin: 20px 0 25px 0;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin: 5px 0;
+  }
 }
