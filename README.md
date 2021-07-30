@@ -1,4 +1,4 @@
-> 2021 Learnings
+# 2021 Learnings
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
 

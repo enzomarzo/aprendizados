@@ -1,12 +1,14 @@
 <h1>React</h1>
 
+<p class="curiosity"><span class="title-curiosity">Porque o React?</span> Surgiu como uma demanda interna do facebook, em 2011. A ideia era ter uma biblioteca javascript que fosse dinâmica e performática, como de fato acontece com o facebook e o instagram. Em 2013 virou open source e começou a ser utilizado amplamente pelo mercado.</p>
+
 <p>Eu tinha uma experiência anterior em Angular, da versão 4 até a versão 8. E aqui nesse link eu tenho todo o meu aprendizado em Angular</p>
 
 <p>O React é hoje a lib/framework JS mais utilizada. O Angular acabou abarcando mais projetos corporativos (bem robusto e sem tanta indexação e SEO) e o React ficou bastante famoso e utilizado em tudo que é aplicação web.</p>
 
 <p>A partir de julho.2021 comecei a me aprofundar em React, fiz 2 imersões de uma semana e um bootcamp de 3 meses e colocarei aqui as semelhanças e diferenças que eu aprendi com o Angular</p>
 
-<h2>Iniciando noos projeto</h2>
+<h2>Iniciando nosso projeto</h2>
 
 <p><b>requisitos:</b> Instalar node/yarn</p>
 
@@ -73,7 +75,7 @@
 
 <p><b>JSX:</b> JS com HTML no mesmo lugar. E pra confundir um pouco mais, os componentes JS também ficam dentro de tags. Para diferenciar uma da outra, as tags das functions do js são sempre criadas em maiúsculas. <code>&lt;div&gt;</code> é uma tag html e <code>&lt;Div&gt;</code> é uma <code>function Div()</code> do JS.</p>
 
-<p><b>Function x class:</b> no react, os componentes se iniciam com <code>export function</code> ao invés de <code>export Class</code> do Angular. As versões mais antigas do react usavam class. Mas passaram a utilizar function.</p>
+<p><b>Function x class:</b> A tendência atual do React é usar o paradigma funcional. Isso significa que ao invés de termos classes - como no angular que utilizamos o 'export class...', temos apenas funções em todo o canto do código, utilizando o 'export function'. É possível programar com os dois paradigmas no react e a própria documentação contém as formas e eles dizem que não vão descontinuar a forma de escrever com as classes.
 
 <p><b>Componentes:</b> assim como o angular, tudo no react é um componente. E a junção desses componentes geram as páginas.</p>
 
@@ -100,3 +102,37 @@
 <p>Vai ficar assim:</p>
 
 <pre><code [highlight]='codeReact2'></code></pre>
+
+<h2>Imutabilidade</h2>
+
+<p>Podemos alterar uma variável diretamente ou podemos mudar uma variável criando uma nova.</p>
+
+<pre><code [highlight]='codeReactImutabilidade'></code></pre>
+
+<p>o resultado será o mesmo. Mas então porque utilizar a imutabilidade?</p>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">Manter histórico: como no exemplo do jogo da velha, imagina que queremos manter o historico de partidas anteriores para poder criar um arquivo e acessá-los depois. Com a imutabilidade isso fica bem mais fácil de ser feito</li>
+  <li class="list-group-item">Detectar mudanças: saber se um objeto mudou, para tomar alguma determinada ação. Com a imutabilidade é facíl, só comparar os dois objetos e ver se tem mudança.</li>
+  <li class="list-group-item">re-renderização: no React isso é bastante útil. Quando uma mudança ocorre se torna necessário re-renderizar. E como a imutabilidade torna fácil o processo de perceber as mudanças, re-renderizar fica mais fácil.</li>
+</ul>
+
+<h2>Styled Component & props</h2>
+
+<p>Duas coisas que pra mim foram um pouco estranhas para aprender. E as duas juntas ainda mais estranha :)</p>
+
+<p><b>As props</b>, como já falado antes, é um parametro que passamos ao criar um componente nosso. Na verdade, no componente react, é o unico parametro que podemos passar. </p>
+
+<pre><code [highlight]='codeProps1'></code></pre>
+
+<p><b>No Styled Component</b> utilizamos nosso CSS dentro do JS. E nosso CSS passa também a ser um componente (por isso o nome de ´componente de estilo´). Criamos uma váriavel que recebe uma tag html e passamos todo o estilo que quisermos, inclusive com funções e variáveis JS.</p>
+
+<pre><code [highlight]='codeStyledComponent'></code></pre>
+
+<p>Veja como acessamos nossas props no Styled component acima. Temos que passar com uma função que vai receber a props.</p>
+
+<h2>Babel e Webpack (React por trás dos panos)</h2>
+
+<p>O Babel é o responsável por fazer o JS funcionar bem em todos os navegadores. Hoje não percebemos isso com tanto valor, de tão automatico que isso é feito. Antigamente precisava tornar o JS compativel com diferentes navegadores e versões. o Babel resolveu esse problema há um bom tempo. Por exemplo, arrow function de JS não é suportado em um determinado navegador. Ele pega o arrow function e transforma numa function para poder rodar normalmente. Ele também é o responsável pela transpilar código em <b>typescript</b> e em <b>JSX</b> para JS. </p>
+
+<p>Já o webpack é responsável pelos bundles de JS e CSS. Ele faz todo papel de minificação, de uglify e de separar por bundles nossos diversos arquivos JS e CSS para gerar um build mais inteligente.</p>
