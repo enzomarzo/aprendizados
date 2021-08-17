@@ -22,6 +22,7 @@ import { FirebaseComponent } from './firebase/firebase.component';
 import { ArraysObjetosComponent } from './javascript/_principios/arrays-objetos/arrays-objetos.component';
 import { CrudComponent } from './javascript/crud/crud.component';
 import { JamstackComponent } from './jamstack/jamstack.component';
+import { ReduceComponent } from './javascript/reduce/reduce.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { JamstackComponent } from './jamstack/jamstack.component';
     FirebaseComponent,
     CrudComponent,
     ArraysObjetosComponent,
-    JamstackComponent],
+    JamstackComponent,
+    ReduceComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
