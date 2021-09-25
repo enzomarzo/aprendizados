@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description 
 
-This project was made for writting down about different technologies I have been learning. THe old version of this project (made on 2019/2020) the focus of my lernings was Java & Angular.
+This project was made for writing down about different technologies I have been learning. The old version of this project (made in 2019/2020) the focus of my learnings was Java & Angular.
 
 ---
 
