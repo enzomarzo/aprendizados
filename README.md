@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description 
 
-In this project I'm taking notes of the tecnologies I'm learning. In the first version (in 2020) the focus of my learning was Java and Angular. In 2021 I am focusing my efforts on Javascript and React.
+This project was made for writting down about different technologies I have been learning. THe old version of this project (made on 2019/2020) the focus of my lernings was Java & Angular.
 
 ---
 
