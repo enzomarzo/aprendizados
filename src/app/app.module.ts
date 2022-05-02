@@ -23,6 +23,7 @@ import { ArraysObjetosComponent } from './javascript/_principios/arrays-objetos/
 import { CrudComponent } from './javascript/crud/crud.component';
 import { JamstackComponent } from './jamstack/jamstack.component';
 import { ReduceComponent } from './javascript/reduce/reduce.component';
+import { RestComponent } from './aleatorios/rest/rest.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ReduceComponent } from './javascript/reduce/reduce.component';
     CrudComponent,
     ArraysObjetosComponent,
     JamstackComponent,
-    ReduceComponent],
+    ReduceComponent,
+    RestComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

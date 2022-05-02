@@ -1,0 +1,42 @@
+<h1>Rest</h1>
+
+<p>Ele serve como uma diretriz de como devemos trabalhar com o protocolo HTTP. Nada mais é do que um modelo de arquitetura, um guia que tem como finalidade padronizar e melhorar os envios e recebimentos de dados, independente do formato (Json, xml, textos, etc.)</p>
+
+<p>A ideia é primeiro separar o servidor do cliente, algo muito comum hoje em dia. Na programação web, seria a comunicação entre o back-end (o servidor) e o front-end (cliente).</p>
+
+<p>Essa comunicação entre servidor e cliente é feita com o padrão request-response. Ou seja, fazemos um request para o servidor e recebemos um response dele.</p>
+
+<p>Para fazer uma requisição pelo cliente, com o REST, informamos</p>
+<ul>
+  <li>um verbo: get, post, put, delete..</li>
+  <li>o header: com as informações sobre a requisição (por exemplo se é do tipo xml ou json)</li>
+  <li>o path: o caminho para o servidor (www.site.com.br/api/...)</li>
+  <li>Informações no corpo (body) que são opcionais</li>
+</ul>
+
+<p>Recebendo a requisição o servidor retorna o response com um status, como 200, 201 ou 500.</p>
+
+<p>Soap x Rest x GraphQL</p>
+
+<p>Existe uma diferença teórica entre as três. SOAP é um protocolo (como o protocolo http). REST é um modelo de arquitetura (que usa o protocolo http). E GraphQL é uma linguagem de consultas (query language, como o próprio QL diz).</p>
+
+<p>Todas elas servem para fazer a comunicação entre o backend e o frontend (consumir uma API). </p>
+
+<p>Pensando com cabeça hypada, o SOAP foi substituido pelo REST que está sendo substituido pelo GraphQL. Claro, fora do hype sabemos que não é bem assim e muitas vezes faz sentido usar uma ou outra.</p>
+
+<p>O SOAP é mais verboso, temos que adicionar todos os dados na requisição.</p>
+
+<h2>NextJS</h2>
+
+<p>O Next é um framework que tem bibliotecas e funcionalidades que facilitam:</p>
+
+<ul>
+  <li>Criar aplicações que podem ser renderizadas no servidor e gerar sites estáticos</li>
+  <li>Conseguir iniciar um servidor local facilmente</li>
+  <li>Otimização de imagens, script e fontes na hora do build</li>
+  <li>Suporte ao Typescript e ao Sass</li>
+  <li>Rotas: configuradas com a lib <code>Link</code></li>
+  <li>Internacionalidzação: Criar aplicações em diferentes idiomas</li>
+  <li>Code Splitting and Bundling otimizado</li>
+</ul>
+

@@ -22,8 +22,8 @@ export class CrudComponent implements OnInit {
   .then((res) => res.json())
   .then((newRes) => console.log(newRes))
 
-  //Dois then? É, o primeiro vai pegar a resposta no servidor e transformar em um json. Mas ainda assim retorna uma promissa e não o JSON detalhado como queremos.
-  //o segundo then vai trabalhar nessa promessa, pegando essa resposta e transformar essa resposta no arquivo json que queremos`
+  //Dois then? É, o primeiro vai pegar a resposta no servidor e transformar em um json. Mas ainda assim retorna uma promisse e não o nosso objeto.
+  //o segundo then vai transformar o JSON em objeto. Isso pode confundir, mas JSON, apesar da semelhança, é uma notação de objeto. E não um objeto propriamente. Por isso temos que transformar (o método then faz isso) o JSON em objeto`
 
   codeCrud3 = `fetch('https://api.github.com/users/enzomarzo/followers')
   .then((res) => res.json())
